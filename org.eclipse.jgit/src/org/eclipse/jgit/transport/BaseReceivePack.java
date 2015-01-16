@@ -1058,8 +1058,9 @@ public abstract class BaseReceivePack {
 		else if (pushedCertNonce.equals(pushCertNonce))
 			return NONCE_OK;
 
-		// TODO: if (!stateless_rpc) //Does jgit support stateless rpc?
-		// return NONCE_BAD
+		// TODO: Do we have a stateless rpc for jgit?
+		// if (!statelessRPC)
+		// 	return NONCE_BAD;
 
 		/* nonce is concat(<seconds-since-epoch>, "-", <hmac>) */
 		int idxNonce = pushedCertNonce.indexOf('-');
